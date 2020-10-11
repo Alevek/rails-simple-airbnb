@@ -1,17 +1,25 @@
 
 <h2>All our flats (<%= Flat.count %>)</h2>
-<div class="container d-flex flex-row">
+<div class="container d-flex">
+  <div class="row justify-content-md-center">
   <% @flats.each do |flat| %>
-    <div class="card" style="width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title"><%= flat.name %></h5>
-        <p class="card-text"><%= flat.address %></p>
-        <i class="fas fa-user-friends"><%= flat.number_of_guests %></i>
-        <i class="fas fa-euro-sign"><%= flat.price_per_night %></i>
-        <div class="link-flat">
-          <a href="#" class="card-link"><%= link_to 'More info', flats_path %></a>
+    <div class="card mr-3 mb-3" style="width: 18rem;">
+      <div class="col">
+        <div class="card-body">
+          <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-1.2.1&auto=format&fit=crop&w=1046&q=80" />
+          <div class="main-content">
+            <h5 class="card-title"><%= flat.name %></h5>
+            <p class="card-text"><%= flat.address %></p>
+            <div class="info">
+              <span><%= flat.number_of_guests %><i class="material-icons">people</i></span><span><%= flat.price_per_night %><i class="material-icons">euro_symbol</i></span>
+            </div>
+          </div>
+          <div class="link-flat">
+            <a class="card-link"><%= link_to 'More info', flat_path(flat) %></a>
+          </div>
         </div>
       </div>
     </div>
-  <% end %>
+      <% end %>
+  </div>
 </div>

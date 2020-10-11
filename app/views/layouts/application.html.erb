@@ -9,14 +9,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="path/to/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+
+
+
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+
   </head>
 
   <body>
-    <div>
-      <%= link_to 'Simple AirBnb', flats_path %>
+    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+        <%= link_to 'Simple AirBnb', flats_path %>
+        <button>
+          <%= link_to 'Add flat', new_flat_path %>
+        </button>
+
     </div>
+
     <%= yield %>
   </body>
 </html>
